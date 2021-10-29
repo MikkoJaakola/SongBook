@@ -1,17 +1,30 @@
 <!DOCTYPE html>
 
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-
-</head>
-	<Title>Songlist</Title>
-	<meta http-equiv="content-type" content="text/html" charset="UTF-8">
-
-<body>
-
-<h1>Hello Thymeleaf</h1>
-
-
-</body>
+	<head>
+	
+	</head>
+		<Title>Songlist</Title>
+		<meta http-equiv="content-type" content="text/html" charset="UTF-8">
+	
+	<body>
+	
+		<h1>Hello Thymeleaf</h1>
+		
+		<table class="table-striped">
+			<tr>
+				<th>title</th>
+				<th>lyrics</th>
+			</tr>
+			
+			<tr th:each = "song : ${songs}">
+			<td th:text = "${song.title}"></td>
+			<td th:text = "${song.lyrics}"></td>
+		
+		</table>
+	
+	
+	
+	</body>
 
 </html>

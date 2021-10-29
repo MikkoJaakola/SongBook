@@ -11,15 +11,17 @@ import javax.persistence.Id;
 public class Song {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Long Id;
+	private long Id;
 	private String title, lyrics;
 	
 	
+	public Song() {
+		
+	}
 	
 	
-	public Song(Long id, String title, String lyrics) {
+	public Song(String title, String lyrics) {
 		super();
-		Id = id;
 		this.title = title;
 		this.lyrics = lyrics;
 	}
