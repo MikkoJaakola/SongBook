@@ -8,6 +8,7 @@ import com.example.SongBook.domain.SongRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -35,5 +36,12 @@ public class SongController {
 		repository.save(song);
 		return "redirect:songlist";
 	}
+	
+	@RequestMapping(value="/delete/{id}", method=RequestMethod.GET)
+	public String deleteSong(@PathVariable("id") Long songId, Model model) {
+		repository.deleteById(songId);
+		return "redirect:../songlist";
+		
+	} 
 	
 }
