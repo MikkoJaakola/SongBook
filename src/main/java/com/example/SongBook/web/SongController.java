@@ -44,4 +44,12 @@ public class SongController {
 		
 	} 
 	
+	@RequestMapping(value="/edit/{id}", method=RequestMethod.GET)
+	public String editSong(@PathVariable("id") Long songId, Model model) {
+		model.addAttribute("song", repository.findById(songId));
+		return "editsong";
+		
+	}
+	
+	
 }

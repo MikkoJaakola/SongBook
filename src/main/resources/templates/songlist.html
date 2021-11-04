@@ -20,6 +20,7 @@
 			<tr th:each = "song : ${songs}">
 			<td th:text = "${song.title}"></td>
 			<td th:text = "${song.lyrics}"></td>
+			<td><a th:href="@{/edit/{id}(id=${song.id})}">Edit</a></td>
 			<td><a th:href="@{/delete/{id}(id=${song.id})}"
 			 class="btn btn-xs btn-danger">Delete</a></td>
 			</tr>
