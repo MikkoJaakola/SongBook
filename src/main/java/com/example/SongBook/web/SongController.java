@@ -19,6 +19,11 @@ public class SongController {
 	@Autowired
 	private SongRepository repository;
 	
+	@RequestMapping(value="/login")
+    public String login() {	
+        return "login";
+    }
+	
 	@RequestMapping(value="/songlist")
 	public String songList(Model model) {
 		model.addAttribute("songs", repository.findAll());
