@@ -6,10 +6,11 @@
 	</head>
 		<Title>Songlist</Title>
 		<meta http-equiv="content-type" content="text/html" charset="UTF-8">
+		<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" />
 	
 	<body>
 	
-		<h1>Hello Thymeleaf</h1>
+		<h1>Songlist</h1>
 		
 		<div class="col-md-4" style="padding:20px 0">
 			<form th:action="@{/logout}" method="post">
@@ -34,6 +35,24 @@
 		</table>
 		
 		<a href="/add">Add some songs</a>
+		
+		<h1>Links to song lyrics:</h1>
+		
+		
+		<table class="table-striped">
+			<tr>
+				<th>Laululista:</th>
+				
+			</tr>
+			
+			<tr th:each = "song : ${songs}">
+			<td><a th:href="@{/showsong/{id}(id=${song.id})}" th:text="${song.title}">lyrics</a></td>
+			<td><a th:href="@{/edit/{id}(id=${song.id})}">edit</a></td>
+			<td><a th:href="@{/delete/{id}(id=${song.id})}"
+			 class="btn btn-xs btn-danger">Delete</a></td>
+			</tr>
+		
+		</table>
 	
 	
 	

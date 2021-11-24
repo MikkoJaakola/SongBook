@@ -26,7 +26,7 @@ public class SongBookApplication {
 			
 			
 		log.info("Save a song");
-		repository.save(new Song("Helan Gar", "jallutahti"));
+		repository.save(new Song("Helan Går", "Helan går"));
 		repository.save(new Song("Koskenkorva", "koskenkorvaaaaaa"));
 		repository.save(new Song("Lammaslaulu", "lampaita"));
 		
